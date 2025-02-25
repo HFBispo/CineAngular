@@ -1,0 +1,11 @@
+<dialog [id]="modalId" class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-[16px]">✕</button>
+      </form>
+      <ng-content select="[modalTitle]"></ng-content>
+      <div class="modal-action flex justify-start">
+        <ng-content select="[modalBody]"></ng-content>
+      </div>
+    </div>
+</dialog>

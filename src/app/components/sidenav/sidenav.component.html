@@ -1,0 +1,37 @@
+<aside class="h-screen w-[20%] bg-white text-black fixed inset-y-0 left-0">
+
+    <div class="m-[24px] mt-[50px]">
+
+        <div class="flex items-center mb-[58px]">
+            <app-avatar [img]="userImg" 
+                [primaryName]="username" 
+                size="size-[52px] rounded-full">
+            </app-avatar>
+        </div>
+        
+        <div>
+            <div>
+                <ul>
+                    <a routerLink="/" routerLinkActive="bg-blue-700 text-white hover:bg-blue-700" [routerLinkActiveOptions]="{exact: true}" class="h-[42px] flex items-center rounded-[4px] hover:bg-blue-300">
+                        <li class="m-[12px]">{{ 'sidenav.home' | translate }}</li>
+                    </a>
+                    <a routerLink="/movies" [class]="isActive() ? 'bg-blue-700 text-white' : 'hover:bg-blue-300'" class="h-[42px] flex items-center rounded-[4px]">
+                        <li class="m-[12px]">{{ 'sidenav.movies' | translate }}</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="mt-[42px] mb-[46px]">
+                <ul>
+                    <a routerLink="/config" routerLinkActive="bg-blue-700 text-white hover:bg-blue-700" class="h-[42px] flex items-center rounded-[4px] hover:bg-blue-300">
+                        <li class="m-[12px]">{{ 'sidenav.config' | translate }}</li>
+                    </a>
+                    <a class="h-[42px] flex items-center rounded-[4px] hover:bg-blue-300">
+                        <li class="m-[12px]">{{ 'sidenav.exit' | translate }}</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</aside>

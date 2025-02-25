@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "movieId": 238,
+    "author": "João Silva",
+    "rating": 4,
+    "reviewContent": "O filme foi uma ótima adaptação para os fãs do Sonic, com efeitos visuais incríveis e uma boa dose de ação.",
+    "reviewDate": "2025-02-10T14:30:00Z",
+    "watchedDate": "2025-02-09T20:00:00Z"
+  },
+  {
+    "id": "2",
+    "movieId": 238,
+    "author": "Maria Souza",
+    "rating": 3,
+    "reviewContent": "Apesar de ter uma boa dinâmica entre os personagens, achei que o enredo deixou a desejar em algumas partes.",
+    "reviewDate": "2025-02-11T09:00:00Z",
+    "watchedDate": "2025-02-10T22:30:00Z"
+  },
+  {
+    "id": "3",
+    "movieId": 238,
+    "author": "Carlos Mendes",
+    "rating": 5,
+    "reviewContent": "Excelente! Muito divertido e fiel ao personagem. As piadas e cenas de ação são de cair o queixo!",
+    "reviewDate": "2025-02-12T18:45:00Z",
+    "watchedDate": "2025-02-12T14:00:00Z"
+  },
+  {
+    "id": "4",
+    "movieId": 238,
+    "author": "Ana Costa",
+    "rating": 2,
+    "reviewContent": "O filme tem seus momentos, mas a história ficou um pouco fraca no geral.",
+    "reviewDate": "2025-02-12T12:00:00Z",
+    "watchedDate": "2025-02-11T19:00:00Z"
+  },
+  {
+    "id": "8cb9",
+    "movieId": 129,
+    "author": "Henrique Bispo",
+    "rating": "8",
+    "reviewContent": "Filme parece bom, mas é ruim\n",
+    "reviewDate": "2025-02-12T18:00:03.746Z",
+    "watchedDate": "2025-02-05"
+  }
+]

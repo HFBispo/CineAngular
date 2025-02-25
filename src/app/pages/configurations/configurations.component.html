@@ -1,0 +1,21 @@
+<div class="h-screen ml-[46px] mr-[54px] text-black">
+
+    <div class="text-[36px] font-bold py-[1%]">
+        {{ 'sidenav.config' | translate }}
+    </div>
+    
+    <div class="py-[33px] px-[40px] bg-white rounded-[12px]">
+        <div class="flex items-center">
+            <span class="text-[20px] font-semibold mr-[24px]">{{ 'configurations.theme' | translate }}</span>
+            <app-theme-selector></app-theme-selector>
+        </div>
+
+        <hr class="text-gray-800 my-5">
+
+        <div class="flex items-center">
+            <span class="text-[20px] font-semibold mr-[24px]">{{ 'configurations.language' | translate }}</span>
+            <app-language-selector></app-language-selector>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,51 @@
+<div>
+
+    <div class="mt-[11px]">
+        <span class="text-gray-500">{{ listedMovies }} {{ 'movie.listedMovies' | translate }}</span>
+    </div>
+    
+    <div class="mt-[16px] py-[32px] px-[40px] bg-white rounded-[12px]">
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 justify-items-center gap-[25px]">
+    
+            @for (item of viewMovieList; track $index) {
+                @defer {
+                    <div class="w-full"> 
+                        <app-movie-card [movieId]="item.id"
+                            [movieTitle]="item.title" 
+                            [movieDate]="item.release_date | date:'longDate' : '' : languageValue" 
+                            [movieImg]="'https://image.tmdb.org/t/p/w500/' + item.poster_path" 
+                            movieRouterLink = "/movie/">
+                        </app-movie-card>
+                    </div>
+                } 
+                @placeholder {
+                    <div class="flex w-[32.4vh] flex-col gap-4">
+                        <div class="skeleton w-full h-[48vh]"></div>
+                        <div class="skeleton h-6 w-full mb-2"></div>
+                        <div class="skeleton h-4 w-full"></div>
+                    </div>
+                }
+            }
+            @empty {
+                <div class="col-span-4 text-[20px]">
+                    <h1>{{ 'movie.notFoundMovie' | translate }}</h1>
+                </div>
+            }
+           
+        </div>
+    </div>
+
+</div>
+
+<div class="flex justify-center p-5">
+
+    <app-common-button (click)="loadMoreMovies()" buttonClass="bg-blue-600 hover:bg-blue-900 text-white font-bold py-3 px-6">
+        <ng-container commonButton>
+            <span>{{ 'movie.seeMore' | translate }}</span>
+            <img src="/assets/arrow-down.svg" class="ml-[5px] size-[20px]" alt="arrow-down">
+        </ng-container>
+    </app-common-button>
+    
+</div>
+
+

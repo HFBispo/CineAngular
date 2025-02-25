@@ -1,0 +1,19 @@
+<div class="h-full ml-[46px] mr-[54px] text-black pb-10">
+
+    <div class="text-[32px] font-bold py-[1%]">
+        {{ movieDetails.movie.title }}
+    </div>
+
+    <div class="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 auto-rows-auto gap-6">
+        <app-details-card-movie class="row-span-2" [movieDetails]="movieDetails"></app-details-card-movie>
+
+        <app-details-cast-movie class="lg:col-span-2 md:col-span-1" [movieDetails]="movieDetails"></app-details-cast-movie>
+    
+        <app-details-overview-movie class="lg:col-span-2 md:col-span-1" [movieDetails]="movieDetails"></app-details-overview-movie>
+
+        <app-details-review-movie class="lg:col-span-3 md:col-span-1" [movieDetails]="movieDetails"></app-details-review-movie>
+    </div>
+
+</div>
+
+

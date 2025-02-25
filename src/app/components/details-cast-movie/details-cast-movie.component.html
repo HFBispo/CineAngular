@@ -1,0 +1,48 @@
+<div class="p-[25px] h-full bg-white dark:bg-dark-700 rounded-[12px] flex flex-col justify-between items-start">
+
+    <h3 class="font-semibold text-[25px]">{{ 'movie.details.cast' | translate }}</h3>
+
+    <div class="mt-[16px] grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4">
+        @for (item of movieDetails.credits.cast; track $index) {
+            @if ($index < 4) {
+                <div class="mb-[20px]">
+                    <app-avatar [img]="item.profile_path !== null ? 'https://image.tmdb.org/t/p/w500/' + item.profile_path: '/assets/blank-profile.jpg'" 
+                        [primaryName]="item.original_name" 
+                        [secondaryName]="item.character" 
+                        size="size-[72px] rounded-full">
+                    </app-avatar>
+                </div>
+            }
+        }
+    </div>
+
+    <div class="justify-self-end self-end">
+
+        <app-common-button buttonClass="bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-6" onclick="modalCast.showModal()">
+            <ng-container commonButton>
+                <span>{{ 'movie.seeMore' | translate }} +</span>
+            </ng-container>
+        </app-common-button>
+        
+    </div>
+    
+</div>
+
+<app-modal modalId="modalCast">
+    <ng-container modalTitle>
+        <h3 class="font-semibold text-[28px] p-2">{{ 'movie.details.cast' | translate }}</h3>
+    </ng-container>
+    <ng-container modalBody>
+        <div class="grid justify-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 p-2">
+            @for (item of movieDetails.credits.cast; track $index) {
+                <div class="mb-[20px]">
+                    <app-avatar [img]="item.profile_path !== null ? 'https://image.tmdb.org/t/p/w500/' + item.profile_path: '/assets/blank-profile.jpg'" 
+                        [primaryName]="item.original_name" 
+                        [secondaryName]="item.character" 
+                        size="size-[68px] rounded-full">
+                    </app-avatar>
+                </div>
+            }
+        </div>
+    </ng-container>
+</app-modal>

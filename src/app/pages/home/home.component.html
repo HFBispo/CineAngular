@@ -1,0 +1,71 @@
+<div class="h-full ml-[46px] mr-[54px] text-black">
+
+    <div class="relative pt-3">
+        <img src="assets/banner.png" class="rounded-[6px] h-[36vh] w-full" alt="banner">
+        <div class="absolute top-3 w-full h-[36vh] bg-gradient-to-r from-blue-400 from-20% rounded-[6px]"></div>
+
+        <div class="absolute top-3 left-14 h-[36vh] flex flex-col justify-center items-start">
+            <div class="text-[40px] font-bold text-white pb-[1%]">
+                {{ 'home.createList' | translate }}
+            </div>
+            <div class="text-[20px] text-white">
+                <p>{{ 'home.createListDescription' | translate }}</p>
+            </div>
+            <div class="pt-[4%] pb-[1%]">
+                <app-common-button routerLink="/movies" buttonClass="bg-white text-blue-600 hover:bg-blue-900 hover:text-white font-bold py-3 px-5">
+                    <ng-container commonButton>
+                        <span>{{ 'home.viewMovies' | translate }}</span>
+                    </ng-container>
+                </app-common-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-[3%] pb-[1%]">
+        <div class="flex items-center justify-between text-[32px] font-bold">
+            {{ 'home.favoriteMovies' | translate }} 
+            <div class="flex items-center pt-1">
+                <img src="assets/keyboard_key_left.svg" class="size-[32px]" alt="key-left">
+                <img src="assets/keyboard_key_right.svg" class="size-[32px]" alt="key-right">
+            </div>
+        </div>
+    </div>
+
+    <div class="relative mt-[16px] py-[32px] px-[40px] bg-white rounded-[12px]">
+        <div class="carousel carousel-center max-w-full">
+
+            @for (item of viewMovieList.slice().reverse(); track $index) {
+                @defer {
+                    <div class="carousel-item mr-[25px]"> 
+                        <app-movie-card [movieId]="item.id"
+                            [movieTitle]="item.title" 
+                            [movieDate]="item.release_date | date:'longDate' : '' : languageValue" 
+                            [movieImg]="'https://image.tmdb.org/t/p/w500/' + item.poster_path" 
+                            movieRouterLink = "/movie/"
+                            (movieDeleted)="deleteFavoriteMovieByMovieId()">
+                        </app-movie-card>
+                    </div>
+                }
+                @placeholder {
+                    <div class="carousel-item mr-[25px]"> 
+                        <div class="flex w-[32.4vh] flex-col gap-4">
+                            <div class="skeleton w-full h-[48vh]"></div>
+                            <div class="skeleton h-6 w-full mb-2"></div>
+                            <div class="skeleton h-4 w-full"></div>
+                        </div>
+                    </div>
+                }
+            }
+            @empty {
+                <div class="flex justify-center text-[20px]">
+                    <h1>{{ 'movie.notFoundMovie' | translate }}</h1>
+                </div>
+            }
+            
+        </div>
+           
+    </div>
+
+    <div class="text-[32px] font-bold pt-[3%] pb-[1%]"></div>
+    
+</div>

@@ -1,0 +1,40 @@
+<div class="p-[25px] h-full bg-white dark:bg-dark-700 rounded-[12px]">
+
+   <div class="flex justify-center">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + movieDetails.movie.poster_path" class="w-[52vh] h-[60vh] rounded-[10px]" alt="movie-img">
+   </div>
+   <div>
+      <div class="flex items-center py-[2%]">
+
+         <app-badge badgeClass="bg-blue-700 h-[40px] p-4 rounded-[8px]">
+            <ng-container badge>
+               <img src="/assets/star.png" alt="star">
+               <p class="mx-[10px] text-[25px] text-white">{{ movieDetails.movie.vote_average.toFixed(1) }}</p>
+            </ng-container>
+         </app-badge>
+
+         <div class="px-[5%]">
+            <div>
+               <p>{{ 'movie.details.directedBy' | translate }} <span class="font-bold">{{ getMovieDirecting() }}</span></p>
+            </div>
+            <div>
+               <p>{{ movieDetails.movie.release_date | date:'longDate' : '' : languageValue }}</p>
+            </div>
+         </div>
+      </div>
+      <div class="grid grid-cols-4 gap-1">
+         @for (item of movieDetails.movie.genres; track $index) {
+
+            <div [class]="item.name.length > 8 ? 'col-span-2':'col-span-1'">
+               <app-badge badgeClass="bg-blue-700 h-[25px] w-full p-4 rounded-[8px]">
+                  <ng-container badge>
+                     <p class="text-[16px] text-white">{{ item.name }}</p>
+                  </ng-container>
+               </app-badge>
+            </div>
+         
+         } 
+      </div>
+   </div>
+
+</div>

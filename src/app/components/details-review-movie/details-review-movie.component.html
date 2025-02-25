@@ -1,0 +1,165 @@
+<div class="p-[24px] bg-white dark:bg-dark-700 rounded-[12px]">
+
+    <div class="flex justify-between items-center">
+        <h3 class="font-semibold text-[25px] mr-4">{{ 'movie.details.reviews' | translate }}</h3>
+        <app-common-button buttonClass="bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4"
+            onclick="modalReview.showModal()">
+            <ng-container commonButton>
+                <span>{{ 'movie.details.addReview' | translate }} +</span>
+            </ng-container>
+        </app-common-button>
+    </div>
+
+    @for (item of reviews; track $index) {
+        <div class="p-[10px] bg-white dark:bg-dark-700 rounded-[12px] border border-gray-100 shadow-lg shadow-gray-100 my-4">
+            <div class="p-2">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <app-avatar img="/assets/blank-profile.jpg" [primaryName]="item.author" 
+                        size="size-[44px] rounded-full"></app-avatar>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="/assets/star.png" alt="star" class="size-[24px]"> 
+                        <p class="font-bold text-[20px]">{{ item.rating }}</p>
+                    </div>
+                </div>
+
+                <hr class="text-gray-800 mt-3">
+                
+                <div class="text-[18px] py-2">
+                    <p>{{ item.reviewContent }}</p>
+                </div>
+
+                <div class="flex justify-start items-center text-[14px] text-gray-500">
+                    <p c>{{ item.reviewDate  | date:'longDate' : '' : languageValue }}</p> 
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<app-modal modalId="modalReview">
+    <ng-container modalTitle>
+        <h3 class="font-semibold text-[24px] p-2">{{ 'movie.details.addReview' | translate }}</h3>
+    </ng-container>
+    <ng-container modalBody>
+        <form [formGroup]="formReview" (ngSubmit)="onSubmit()" class="w-full">
+            
+            <div class="flex justify-start">
+                <div class="p-2">
+                    <label for="watchedDate">{{ 'movie.details.watchedDate' | translate }}: <span
+                            class="text-red-700 font-bold">*</span></label>
+                    <input type="date" id="watchedDate" name="watchedDate" formControlName="watchedDate"
+                        placeholder="Nome" class="input input-bordered w-full max-w-xs bg-white" />
+
+                    @if ((this.formReview.get('watchedDate')?.invalid && this.formReview.get('watchedDate')?.touched) ||
+                    (alertAll && this.formReview.get('watchedDate')?.invalid)) {
+                    <p class="text-red-700">{{ 'movie.details.errors.watchedDateError' | translate }}</p>
+                    }
+                    @if (!validatorDate(this.formReview.get('watchedDate')?.value) && this.formReview.get('watchedDate')?.touched) {
+                    <p class="text-red-700">{{ 'movie.details.errors.watchedAfterDateError' | translate }}</p>
+                    }
+
+                </div>
+
+                <div class="p-2">
+                    <label for="rating">{{ 'movie.details.rating' | translate }}: <span
+                            class="text-red-700 font-bold">*</span></label>
+                    <select id="rating" name="rating" formControlName="rating"
+                        class="select select-bordered w-full max-w-xs bg-white text-black">
+                        <option [value]="10">10</option>
+                        <option [value]="9">9</option>
+                        <option [value]="8">8</option>
+                        <option [value]="7">7</option>
+                        <option [value]="6">6</option>
+                        <option [value]="5">5</option>
+                        <option [value]="4">4</option>
+                        <option [value]="3">3</option>
+                        <option [value]="2">2</option>
+                        <option [value]="1">1</option>
+                        <option [value]="0">0</option>
+                    </select>
+
+                    @if ((this.formReview.get('rating')?.invalid && this.formReview.get('rating')?.touched) ||
+                    (alertAll && this.formReview.get('rating')?.invalid)) {
+                    <p class="text-red-700">{{ 'movie.details.errors.ratingError' | translate }}</p>
+                    }
+
+                </div>
+            </div>
+
+            <div class="p-2">
+                <label for="name">{{ 'movie.details.name' | translate }}: <span
+                        class="text-red-700 font-bold">*</span></label>
+                <input type="text" id="name" name="name" formControlName="name"
+                    placeholder="{{ 'movie.details.namePlaceholder' | translate }}"
+                    class="input input-bordered w-full bg-white" />
+
+                @if ((this.formReview.get('name')?.invalid && this.formReview.get('name')?.touched) ||
+                (alertAll && this.formReview.get('name')?.invalid)) {
+                <p class="text-red-700">{{ 'movie.details.errors.nameError' | translate }}</p>
+                }
+
+            </div>
+
+            <div class="p-2">
+                <label for="reviewContent">{{ 'movie.details.reviewContent' | translate }}: <span
+                        class="text-red-700 font-bold">*</span></label>
+                <textarea id="reviewContent" name="reviewContent" formControlName="reviewContent"
+                    class="textarea textarea-bordered w-full bg-white"
+                    placeholder="{{ 'movie.details.reviewContentPlaceholder' | translate }}"></textarea>
+
+                @if ((this.formReview.get('reviewContent')?.invalid && this.formReview.get('reviewContent')?.touched) ||
+                (alertAll && this.formReview.get('reviewContent')?.invalid)) {
+                <p class="text-red-700">{{ 'movie.details.errors.reviewContentError' | translate }}</p>
+                }
+            </div>
+
+            <div class="flex justify-end mt-1 p-2">
+                <app-common-button buttonType="submit" buttonClass="px-8 text-white py-2 bg-blue-600 hover:bg-blue-900">
+                    <ng-container commonButton>
+                        <span>{{ 'movie.details.submit' | translate }}</span>
+                    </ng-container>
+                </app-common-button>
+            </div>
+        </form>
+    </ng-container>
+</app-modal>
+
+@if (showAlert.value) {
+    <div class="fixed bottom-4 left-4">
+        <app-alert [alertClass]="'alert-' + showAlert.type">
+            <ng-container alertContent>
+                @if (showAlert.type === "success") {
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{{ 'movie.details.alert.addReviewAlert' | translate }}</span>
+                }
+                @else {
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 shrink-0 stroke-current"
+                    fill="none"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>{{ 'movie.details.alert.errorReviewAlert' | translate }}</span>
+                }
+            </ng-container>
+        </app-alert>
+    </div>
+}

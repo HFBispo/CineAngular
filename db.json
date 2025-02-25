@@ -1,0 +1,80 @@
+{
+  "reviews": [
+    {
+      "id": "1",
+      "movieId": 238,
+      "author": "João Silva",
+      "rating": 4,
+      "reviewContent": "filme ótimo, com efeitos visuais incríveis e uma boa dose de Drama.",
+      "reviewDate": "2025-02-10T14:30:00Z",
+      "watchedDate": "2025-02-09T20:00:00Z"
+    },
+    {
+      "id": "11a8",
+      "movieId": 278,
+      "author": "Henrique Bispo",
+      "rating": "5",
+      "reviewContent": "Nunca assisti esse filme, mas é bom\n",
+      "watchedDate": "2025-02-13",
+      "reviewDate": "2025-02-14T17:23:55.995Z"
+    },
+    {
+      "id": "05b2",
+      "movieId": 13,
+      "author": "Henrique",
+      "rating": "4",
+      "reviewContent": "Filme muito legal\n",
+      "watchedDate": "2025-02-17",
+      "reviewDate": "2025-02-17T12:58:32.430Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "img": "/assets/profile-img.png",
+      "username": "Henrique Bispo"
+    }
+  ],
+  "favoriteMovies": [
+    {
+      "id": "8b80",
+      "userId": 1,
+      "movieId": 496243
+    },
+    {
+      "id": "8ad4",
+      "userId": 1,
+      "movieId": 129
+    },
+    {
+      "id": "491e",
+      "userId": 1,
+      "movieId": 13
+    },
+    {
+      "id": "0b35",
+      "userId": 1,
+      "movieId": 278
+    },
+    {
+      "id": "89be",
+      "userId": 1,
+      "movieId": 680
+    },
+    {
+      "id": "68bd",
+      "userId": 1,
+      "movieId": 429
+    },
+    {
+      "id": "7d00",
+      "userId": 1,
+      "movieId": 122
+    },
+    {
+      "id": "c737",
+      "userId": 1,
+      "movieId": 389
+    }
+  ]
+}

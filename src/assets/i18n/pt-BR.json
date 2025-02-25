@@ -1,0 +1,54 @@
+{
+  "home": {
+    "createList": "Crie sua lista de filmes",
+    "createListDescription": "Salve seus filmes favoritos e fique por dentro de todos os detalhes",
+    "viewMovies": "Ver Filmes",
+    "favoriteMovies": "Seus filmes favoritos"
+  },
+  "sidenav": {
+    "home": "Início",
+    "movies": "Filmes",
+    "config": "Configurações",
+    "exit": "Sair"
+  },
+  "configurations": {
+    "theme": "Definir Tema",
+    "language": "Definir Linguagem"
+  },
+  "movie": {
+    "seeMore": "Ver Mais",
+    "close": "Fechar",
+    "listedMovies": "Filme(s) Listado(s)",
+    "notFoundMovie": "Nenhum filme listado",
+    "searchBarPlaceholder": "Busque um filme",
+    "details": {
+      "cast": "Elenco",
+      "overview": "Sinopse",
+      "directedBy": "Dirigido por",
+      "watchedDate": "Data que assistiu",
+      "reviews": "Avaliações",
+      "addReview": "Adicionar",
+      "rating": "Nota",
+      "name": "Nome",
+      "namePlaceholder": "Digite seu nome aqui",
+      "reviewContent": "Comentário",
+      "reviewContentPlaceholder": "Digite seu comentário aqui",
+      "submit": "Enviar",
+      "alert": {
+        "addReviewAlert": "Avaliação adicionada",
+        "errorReviewAlert": "Erro ao adicionar avaliação"
+      },
+      "errors": {
+        "watchedAfterDateError": "Insira uma data válida",
+        "watchedDateError": "Preencha o campo acima",
+        "ratingError": "Selecione uma nota",
+        "nameError": "Preencha o campo acima, mínimo 3 letras",
+        "reviewContentError": "Preencha o campo acima, mínimo 10 letras"
+      }
+    }
+  },
+  "notFound": {
+    "pageNotFound": "Página não encontrada",
+    "goBackToHome": "Voltar ao início"
+  }
+}

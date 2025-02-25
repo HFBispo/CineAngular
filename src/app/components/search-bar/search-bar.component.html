@@ -1,0 +1,7 @@
+<div>
+    <div class="realtive flex items-center">
+        <img src="/assets/search-icon.png" class="absolute w-[13.28px] h-[12.97px] m-[14px]" alt="search">
+        <input type="text" class="bg-white px-[37.88px] h-[44px] w-full py-[16px] rounded-[6px] border-[1.5px] border-blue-700 focus:outline-blue-900" 
+            placeholder="{{ 'movie.searchBarPlaceholder' | translate }}..." (input)="inputSearchedValue()" [(ngModel)]="searchedValue" #searchBarInput>
+    </div>
+</div>

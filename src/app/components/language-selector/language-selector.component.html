@@ -1,0 +1,10 @@
+<div class="flex items-center"> 
+    <select class="select select-bordered w-full max-w-xs bg-white" (ngModelChange)="changeSelectedValue($event)" [(ngModel)]="selectedValue">
+        @for (item of languages; track $index) {
+            <option [value]="item.value" [selected]="actualLanguage?.value === item.value">{{ item.name }}</option>
+        }
+    </select>
+    <div class="ml-[24px] text-[28px]"> 
+        <span [class]="actualLanguage?.icon"></span>
+    </div>
+</div>

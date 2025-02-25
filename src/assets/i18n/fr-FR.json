@@ -1,0 +1,54 @@
+{
+  "home": {
+    "createList": "Crée ta liste de films",
+    "createListDescription": "Sauvegarde tes films préférés et reste informé de tous les détails",
+    "viewMovies": "Voir les films",
+    "favoriteMovies": "Tes films préférés"
+  },
+  "sidenav": {
+    "home": "Accueil",
+    "movies": "Films",
+    "config": "Paramètres",
+    "exit": "Quitter"
+  },
+  "configurations": {
+    "theme": "Définir le thème",
+    "language": "Définir la langue"
+  },
+  "movie": {
+    "seeMore": "Voir plus",
+    "close": "Fermer",
+    "listedMovies": "Film(s) listé(s)",
+    "notFoundMovie": "Aucun film listé",
+    "searchBarPlaceholder": "Recherchez un film",
+    "details": {
+      "cast": "Casting",
+      "overview": "Synopsis",
+      "directedBy": "Réalisé par",
+      "watchedDate": "Date vue",
+      "reviews": "Avis",
+      "addReview": "Ajouter",
+      "rating": "Note",
+      "name": "Nom",
+      "namePlaceholder": "Entrez votre nom ici",
+      "reviewContent": "Commentaire",
+      "reviewContentPlaceholder": "Entrez votre commentaire ici",
+      "submit": "Envoyer",
+      "alert": {
+        "addReviewAlert": "Avis ajouté",
+        "errorReviewAlert": "Erreur lors de l'ajout de l'avis"
+      },
+      "errors": {
+        "watchedAfterDateError": "Entrez une date valide",
+        "watchedDateError": "Veuillez remplir le champ ci-dessus",
+        "ratingError": "Sélectionnez une note",
+        "nameError": "Veuillez remplir le champ ci-dessus, minimum 3 lettres",
+        "reviewContentError": "Veuillez remplir le champ ci-dessus, minimum 10 lettres"
+      }
+    }
+  },
+  "notFound": {
+    "pageNotFound": "Page non trouvée",
+    "goBackToHome": "Retour à l'accueil"
+  }
+}
