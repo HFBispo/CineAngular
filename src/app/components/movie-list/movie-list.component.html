@@ -1,10 +1,10 @@
 <div>
 
     <div class="mt-[11px]">
-        <span class="text-gray-500">{{ listedMovies }} {{ 'movie.listedMovies' | translate }}</span>
+        <span class="opacity-75">{{ listedMovies }} {{ 'movie.listedMovies' | translate }}</span>
     </div>
     
-    <div class="mt-[16px] py-[32px] px-[40px] bg-white rounded-[12px]">
+    <div class="mt-[16px] py-[32px] px-[40px] bg-neutral rounded-[12px]">
         <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 justify-items-center gap-[25px]">
     
             @for (item of viewMovieList; track $index) {
