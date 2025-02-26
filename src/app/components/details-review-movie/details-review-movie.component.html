@@ -1,4 +1,4 @@
-<div class="p-[24px] bg-white dark:bg-dark-700 rounded-[12px]">
+<div class="p-[24px] bg-neutral dark:bg-dark-700 rounded-[12px]">
 
     <div class="flex justify-between items-center">
         <h3 class="font-semibold text-[25px] mr-4">{{ 'movie.details.reviews' | translate }}</h3>
@@ -11,7 +11,7 @@
     </div>
 
     @for (item of reviews; track $index) {
-        <div class="p-[10px] bg-white dark:bg-dark-700 rounded-[12px] border border-gray-100 shadow-lg shadow-gray-100 my-4">
+        <div class="p-[10px] bg-neutral dark:bg-dark-700 rounded-[12px] border border-accent shadow-lg shadow-accent my-4">
             <div class="p-2">
                 <div class="flex justify-between items-center">
                     <div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <hr class="text-gray-800 mt-3">
+                <hr class="border-accent border-[1.5px] opacity-50 mt-3">
                 
                 <div class="text-[18px] py-2">
                     <p>{{ item.reviewContent }}</p>
@@ -51,7 +51,7 @@
                     <label for="watchedDate">{{ 'movie.details.watchedDate' | translate }}: <span
                             class="text-red-700 font-bold">*</span></label>
                     <input type="date" id="watchedDate" name="watchedDate" formControlName="watchedDate"
-                        placeholder="Nome" class="input input-bordered w-full max-w-xs bg-white" />
+                        placeholder="Nome" class="input input-bordered w-full max-w-xs bg-neutral" />
 
                     @if ((this.formReview.get('watchedDate')?.invalid && this.formReview.get('watchedDate')?.touched) ||
                     (alertAll && this.formReview.get('watchedDate')?.invalid)) {
@@ -67,7 +67,7 @@
                     <label for="rating">{{ 'movie.details.rating' | translate }}: <span
                             class="text-red-700 font-bold">*</span></label>
                     <select id="rating" name="rating" formControlName="rating"
-                        class="select select-bordered w-full max-w-xs bg-white text-black">
+                        class="select select-bordered w-full max-w-xs bg-neutral text-black">
                         <option [value]="10">10</option>
                         <option [value]="9">9</option>
                         <option [value]="8">8</option>
@@ -94,7 +94,7 @@
                         class="text-red-700 font-bold">*</span></label>
                 <input type="text" id="name" name="name" formControlName="name"
                     placeholder="{{ 'movie.details.namePlaceholder' | translate }}"
-                    class="input input-bordered w-full bg-white" />
+                    class="input input-bordered w-full bg-neutral" />
 
                 @if ((this.formReview.get('name')?.invalid && this.formReview.get('name')?.touched) ||
                 (alertAll && this.formReview.get('name')?.invalid)) {
@@ -107,7 +107,7 @@
                 <label for="reviewContent">{{ 'movie.details.reviewContent' | translate }}: <span
                         class="text-red-700 font-bold">*</span></label>
                 <textarea id="reviewContent" name="reviewContent" formControlName="reviewContent"
-                    class="textarea textarea-bordered w-full bg-white"
+                    class="textarea textarea-bordered w-full bg-neutral"
                     placeholder="{{ 'movie.details.reviewContentPlaceholder' | translate }}"></textarea>
 
                 @if ((this.formReview.get('reviewContent')?.invalid && this.formReview.get('reviewContent')?.touched) ||

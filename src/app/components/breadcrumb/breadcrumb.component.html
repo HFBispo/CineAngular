@@ -1,5 +1,5 @@
 <div class="pt-4 ml-[46px]">
-    <div class="flex items-center text-gray-600">
+    <div class="flex items-center opacity-75">
         @for (item of pagePaths; track $index) {
             @if ($index.valueOf() === pagePaths.length - 1) {
                 <a [routerLink]="item.link">

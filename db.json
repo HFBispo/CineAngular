@@ -52,29 +52,9 @@
       "movieId": 13
     },
     {
-      "id": "0b35",
+      "id": "5246",
       "userId": 1,
-      "movieId": 278
-    },
-    {
-      "id": "89be",
-      "userId": 1,
-      "movieId": 680
-    },
-    {
-      "id": "68bd",
-      "userId": 1,
-      "movieId": 429
-    },
-    {
-      "id": "7d00",
-      "userId": 1,
-      "movieId": 122
-    },
-    {
-      "id": "c737",
-      "userId": 1,
-      "movieId": 389
+      "movieId": 238
     }
   ]
 }
