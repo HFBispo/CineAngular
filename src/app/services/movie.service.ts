@@ -19,6 +19,21 @@ export class MovieService {
     Authorization: 'Bearer ' + environment.apiKey,
   };
 
+  public getPopularMovies(
+    page: number,
+    language: string
+  ): Observable<{ results: Movie[] }> {
+
+    const params = new HttpParams()
+      .set('language', language)
+      .set('page', page);
+
+    return this.http.get<{ results: Movie[] }>(`${this.apiUrl}/popular`, {
+      params: params,
+      headers: this.defaultHeaders,
+    });
+  }
+
   public getTopRatedMovies(
     page: number,
     language: string

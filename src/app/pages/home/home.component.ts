@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   languageValue: string = "";
   viewMovieList: Array<Movie> = new Array<Movie>;
+  popularMovieList: Array<Movie> = new Array<Movie>;
 
   constructor(
     private movieService: MovieService,
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.loadFavoriteMovies();
+    this.loadPopularMovies();
   }
 
   ngAfterViewInit() {
@@ -61,6 +63,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
 
       });  
+  }
+
+  loadPopularMovies() {
+    this.movieService.getPopularMovies(1, this.languageValue)
+      .subscribe({
+        next: (favoriteMovies) => this.popularMovieList = favoriteMovies.results
+      });   
   }
 
   deleteFavoriteMovieByMovieId() {

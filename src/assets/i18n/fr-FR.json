@@ -3,7 +3,8 @@
     "createList": "Crée ta liste de films",
     "createListDescription": "Sauvegarde tes films préférés et reste informé de tous les détails",
     "viewMovies": "Voir les films",
-    "favoriteMovies": "Tes films préférés"
+    "favoriteMovies": "Tes films préférés",
+    "popularMovies": "Films populaires"
   },
   "sidenav": {
     "home": "Accueil",
